@@ -7,7 +7,7 @@ import Skills from './Skills'
 import Projects from './Projects'
 import Experience from './Experience'
 import Education from './Education'
-import useDeviceType from '../../../../hooks/use-device'
+import {useDeviceType} from '../../../../hooks/use-device'
 import ProfileTabs from './ProfileTabs'
 
 const ProfileDetails = ({aboutMe,myJourney,whatIAmWorkingOn,education}:{

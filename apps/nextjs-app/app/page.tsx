@@ -9,12 +9,12 @@ import {name,title,logo, discordLink, email, emailComposeLink, githubLink, linke
    whatIAmWorkingOn,
    education} from '../lib/constants/profileDetails'
 import Profile from '@repo/ui/organisms/custom/profile/Profile'
-import useDevice  from '@repo/ui/hooks/use-device'
+import {useDeviceType}  from '@repo/ui/hooks/use-device'
 import { cn } from '@repo/ui/lib/utils'
 import ProfileDetails from '@repo/ui/organisms/custom/profile/ProfileDetails'
 
-const page = () => {
-  const device = useDevice()
+const Home = () => {
+  const device = useDeviceType()
 
   return (
     <div className={cn('flex justify-center my-10 gap-10 mx-6',
@@ -29,4 +29,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Home

@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import useDevice from '../../../../../hooks/use-device'
+import {useDeviceType} from '../../../../../hooks/use-device'
 import { cn } from '../../../../../lib/utils'
 
 const AvartarNameProfession = ({imagePath, fullName, title}:{imagePath:string, fullName:string, title:string}) => {
-  const device = useDevice() 
+  const device = useDeviceType() 
   return (
     <div className={cn('flex items-center justify-center gap-4 mt-16',
       device === 'desktop' && 'flex-col gap-4'

@@ -5,7 +5,7 @@ import ProfileDetail from '../../../molecules/custom/Portfolio/v1/ProfileDetail'
 import SocialIcons from '../../../molecules/custom/Portfolio/v1/SocialIcons'
 import { BookText, Mail, MapPin, PhoneCallIcon } from 'lucide-react'
 import { Separator } from '../../../atoms/shadcn/separator'
-import useDevice from '../../../../hooks/use-device'
+import { useDeviceType } from '../../../../hooks/use-device'
 import { Button } from '../../../atoms/shadcn/button'
 import { cn } from '../../../../lib/utils'
 
@@ -15,7 +15,7 @@ const Profile = ({name,logo,title,email,emailComposeLink,phone,resume,location, 
     discordLink:string
     }) => {
 
-        const device = useDevice()
+        const device = useDeviceType()
         const [showDetails, setShowDetails] = useState(false)
 
   return (

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useDeviceType = () => {
+export function  useDeviceType(){
   const [deviceType, setDeviceType] = useState('desktop'); // Default to desktop
 
   useEffect(() => {
@@ -27,5 +27,3 @@ const useDeviceType = () => {
 
   return deviceType;
 };
-
-export default useDeviceType;

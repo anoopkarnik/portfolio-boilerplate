@@ -2,14 +2,14 @@
 
 ## Overview
 
-Every company technical or otherwise needs a good landing page to look authentic and have trust of the customers. This is a clean minimalistic landing page in turborepo with resend package for subscription to your mailing list and UI package with atomic design components from shadcn. 
+
 
 ## Starting Locally
 
 Clone the repo using:
 
 ```sh
-npx company-landing-page@latest
+npx portfolio-boilerplate@latest
 ```
 
 ## Deploy Your Own
