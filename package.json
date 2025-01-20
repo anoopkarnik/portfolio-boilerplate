@@ -24,5 +24,10 @@
   "workspaces": [
     "apps/*",
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "@next/third-parties": "^15.1.5",
+    "@tabler/icons-react": "^3.28.1",
+    "framer-motion": "^11.18.1"
+  }
 }

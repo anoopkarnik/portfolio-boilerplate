@@ -7,7 +7,8 @@ import { ThemeProvider } from "@repo/ui/providers/theme-provider";
 import "../../../packages/ui/src/styles/custom/heroBackgroundAnimation.css"
 import { Toaster } from "@repo/ui/molecules/custom/v1/Toaster";
 import { Analytics } from "@vercel/analytics/react"
-import { companyDetails, companyName } from "../lib/constants/appDetails";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { details, name } from "../lib/constants/profileDetails";
 
 
 const geistSans = localFont({
@@ -22,8 +23,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: companyName,
-  description: companyDetails
+  title: name,
+  description: details
 };
 
 export default function RootLayout({
@@ -41,6 +42,7 @@ export default function RootLayout({
               <Analytics/>
               <Toaster />
             </ThemeProvider>
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID as string}/>
       </body>
     </html>
   );
