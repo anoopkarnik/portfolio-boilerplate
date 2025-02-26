@@ -13,7 +13,7 @@ const main = () => {
   execSync(`git clone --depth=1 ${repoUrl} ${targetDir}`, { stdio: 'inherit' });
 
   console.log('Copying environment file...');
-  execSync(`cp ${path.join(targetDir, 'docker/.env.example.nextjs-app')} ${path.join(targetDir, 'apps/nextjs-app/.env')}`, { stdio: 'inherit' });
+  execSync(`cp ${path.join(targetDir, '.env.example.nextjs-app')} ${path.join(targetDir, 'apps/nextjs-app/.env')}`, { stdio: 'inherit' });
 
   console.log('Installing dependencies...');
   execSync(`cd ${targetDir} && npm install`, { stdio: 'inherit' });
