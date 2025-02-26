@@ -13,9 +13,9 @@ const AboutCard = ({imgSrc,title,description}: {imgSrc:string, title:string, des
     >
         <div className='flex items-start justify-center gap-4'>
             <Image src={imgSrc} width={30} height={30} alt={title} />
-            <div className='flex flex-col items-start gap-4'>
+            <div className='flex flex-col items-start gap-1'>
                 <p className='text-lg'>{title}</p>
-                <p className='text-xs text-gray-300'>{description}</p>
+                <p className='text-description'>{description}</p>
             </div>
         </div>
     </div>

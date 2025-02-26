@@ -1,7 +1,5 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
-import { Timeline } from '../../aceternity/timeline'
 import EducationCard from '../../../molecules/custom/Profile/v1/EducationCard'
 
 const Education = ({education}:{education:any[]}) => {

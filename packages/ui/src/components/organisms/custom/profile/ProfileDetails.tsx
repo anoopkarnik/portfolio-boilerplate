@@ -9,13 +9,16 @@ import Experience from './Experience'
 import Education from './Education'
 import {useDeviceType} from '../../../../hooks/use-device'
 import ProfileTabs from './ProfileTabs'
+import { profileDetailsProps } from '@repo/ts-types/profile/profile'
 
-const ProfileDetails = ({aboutMe,myJourney,whatIAmWorkingOn,education}:{
-    aboutMe:string, myJourney:string, whatIAmWorkingOn:any,education:any[]}) => {
+const ProfileDetails = ({about,education,experience, skills, projects}:profileDetailsProps) => {
     const [activeTab, setActiveTab] = useState('about')
     const device = useDeviceType()
   return (
-    <Card className='min-h-[700px] min-w-[50%] max-w-[1000px] overflow-y-auto '>
+    <Card className={cn('min-h-[700px] min-w-[50%] overflow-y-auto ',
+        device === 'desktop' && 'max-w-[800px]',
+        device !== 'desktop' && 'w-full'
+    )}>
         <CardTitle>
             <div className='flex gap-10 justify-between items-start'>
                 <div className='text-title-h1 mt-4 ml-4 capitalize flex flex-col g '>
@@ -29,18 +32,18 @@ const ProfileDetails = ({aboutMe,myJourney,whatIAmWorkingOn,education}:{
                     <ProfileTabs activeTab={activeTab} setActiveTab={setActiveTab}/>
                 </div>}
                 {device === 'mobile' && 
-                <div className='fixed bottom-0 left-[10%] right-[10%] flex justify-center gap-6 bg-accent rounded-t-md  text-sm font-medium p-4'>
+                <div className='fixed bottom-0 left-[10%] right-[10%] flex justify-center bg-accent rounded-t-md text-xs font-light gap-2 flex-wrap sm:gap-6 sm:text-sm sm:font-medium p-4'>
                     <ProfileTabs activeTab={activeTab} setActiveTab={setActiveTab}/>
                 </div>
                 }
             </div>
         </CardTitle>
         <CardContent>
-            {activeTab === 'about' && <About  aboutMe={aboutMe} myJourney={myJourney} whatIAmWorkingOn={whatIAmWorkingOn} />}
+            {activeTab === 'about' && <About  aboutMe={about.aboutMe} myJourney={about.myJourney} whatIAmWorkingOn={about.whatIAmWorkingOn} />}
             {activeTab === 'education' && <Education education={education}/>}
-            {activeTab === 'experience' && <Experience/>}
-            {activeTab === 'skills' && <Skills/>}
-            {activeTab === 'projects' && <Projects/>}
+            {activeTab === 'experience' && <Experience experience={experience}/>}
+            {activeTab === 'skills' && <Skills skills={skills}/>}
+            {activeTab === 'projects' && <Projects projects={projects}/>}
         </CardContent>
     </Card>
   )

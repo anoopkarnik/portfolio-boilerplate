@@ -8,8 +8,7 @@ import "../../../packages/ui/src/styles/custom/heroBackgroundAnimation.css"
 import { Toaster } from "@repo/ui/molecules/custom/v1/Toaster";
 import { Analytics } from "@vercel/analytics/react"
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { details, name } from "../lib/constants/profileDetails";
-
+import {profile} from "../lib/constants/profile"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,8 +22,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: name,
-  description: details
+  title: profile.name,
+  description: profile.details
 };
 
 export default function RootLayout({
@@ -34,6 +33,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* eslint-disable @next/next/no-sync-scripts */}
+        <script src="/scripts/theme.js" />
+        {/* eslint-enable @next/next/no-sync-scripts */}
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

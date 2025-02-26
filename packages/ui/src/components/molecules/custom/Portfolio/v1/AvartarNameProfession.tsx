@@ -5,7 +5,7 @@ import { cn } from '../../../../../lib/utils'
 const AvartarNameProfession = ({imagePath, fullName, title}:{imagePath:string, fullName:string, title:string}) => {
   const device = useDeviceType() 
   return (
-    <div className={cn('flex items-center justify-center gap-4 mt-16',
+    <div className={cn('flex items-center justify-center gap-4 pt-10',
       device === 'desktop' && 'flex-col gap-4'
     )}>
         <Image src={imagePath} width={100} height={100} alt='logo' className='rounded-2xl '/>

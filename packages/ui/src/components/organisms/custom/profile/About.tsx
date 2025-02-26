@@ -3,14 +3,16 @@ import AboutCard from '../../../molecules/custom/Profile/v1/AboutCard'
 const About = ({aboutMe,myJourney,whatIAmWorkingOn}:{aboutMe:string, myJourney:string, whatIAmWorkingOn:any}) => {
   return (
     <div>
-        <h1 className='text-xl underline'>About Me</h1>
-        <p>
+        <h1 className='text-subtitle'>About Me</h1>
+        <p className='text-paragraph'>
             {aboutMe}
         </p>
         
-        <h1 className='text-xl underline mt-4'>My Journey</h1>
+        <h1 className='text-subtitle mt-4'>My Journey</h1>
+        <p className='text-paragraph'>
             {myJourney}
-        <h1 className='text-2xl my-4'>What I am working on</h1>
+        </p>
+        <h1 className='text-subtitle my-4'>What I am working on</h1>
 
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
             {whatIAmWorkingOn.map((item:any, index:number) => (
