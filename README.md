@@ -1,8 +1,10 @@
-# COMPANY LANDING PAGE BOILERPLATE
+# PORTFOLIO BOILERPLATE
+
+*** PLEASE STAR THE REPO IF YOU ARE CLONING IT ***
 
 ## Overview
 
-
+Every developer needs a portfolio. As the future of software is moving away from jobs to freelancing, consulting and solopreneurship. This is a minimal, reactive, portfolio of mine which can be easily modified, built using turborepo framework with next js packages
 
 ## Starting Locally
 
@@ -12,11 +14,16 @@ Clone the repo using:
 npx portfolio-boilerplate@latest
 ```
 
+## Modifying Landing Page, Legal Pages data
+
+1) In apps/nextjs-app/lib/constants/, you can modify profile data section wise in the files.
+
+
 ## Deploy Your Own
 
 1) You can deploy it to Vercel with one click:
 
-    [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fanoopkarnik%2Fcompany-landing-page&build-command=cd%20apps%2Fnextjs-app%20%26%26%20npm%20run%20build&output-directory=apps%2Fnextjs-app%2F.next&install-command=npm%20install&dev-command=cd%20apps%2Fnextjs-app%20%26%26%20npm%20run%20dev
+    [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fanoopkarnik%2Fportfolio-boilerplate&build-command=cd%20apps%2Fnextjs-app%20%26%26%20npm%20run%20build&output-directory=apps%2Fnextjs-app%2F.next&install-command=npm%20install&dev-command=cd%20apps%2Fnextjs-app%20%26%26%20npm%20run%20dev
     )
 
 2) Give a repository name which will clone this repo to your account.

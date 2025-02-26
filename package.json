@@ -1,5 +1,5 @@
 {
-  "name": "company-landing-page",
+  "name": "portfolio-boilerplate",
   "private": false,
   "version": "1.0.0",
   "scripts": {
@@ -15,8 +15,15 @@
     "typescript": "5.5.4"
   },
   "bin": {
-    "company-landing-page": "scripts/cli.js"
+    "portfolio-boilerplate": "scripts/cli.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anoopkarnik/portfolio-boilerplate.git"
+  },
+  "keywords": ["developer", "portfolio", "cli"],
+  "author": "Anoop Karnik",
+  "license": "MIT",
   "engines": {
     "node": ">=18"
   },
