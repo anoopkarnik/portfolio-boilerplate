@@ -58,7 +58,7 @@ export const projects:projectProps[] = [
         type: 'Full Stack',
         description: 'The best portfolio boilerplate code for a developer.',
         techStack: [],
-        demoImage:'/projects/company-landing-page.png',
+        demoImage:'/projects/portfolio-boilerplate.gif',
         contribution: `Made the codebase from scratch`,
         openSourceDetails: {
             link: 'https://github.com/anoopkarnik/portfoilio-boilerplate',

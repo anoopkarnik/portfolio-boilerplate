@@ -18,7 +18,7 @@ const Home = () => {
   const device = useDeviceType()
 
   return (
-    <div className={cn('flex justify-center my-10 gap-10 mx-6',
+    <div className={cn('flex justify-center my-10 gap-10 mx-6 ',
       device === 'tablet' && 'flex-col items-center ',
       device === 'mobile' && 'flex-col items-center'
     )}>
