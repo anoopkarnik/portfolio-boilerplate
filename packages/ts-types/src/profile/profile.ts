@@ -2,7 +2,7 @@ import { aboutProps } from "./about";
 import { educationProps } from "./education";
 import { experienceProps } from "./experience";
 import { projectProps } from "./project";
-import { skillsProps } from "./skills";
+import { skillProps } from "./skills";
 
 export interface profileProps {
     name: string;
@@ -25,6 +25,6 @@ export interface profileDetailsProps {
     about: aboutProps;
     education: educationProps[];
     experience: experienceProps[];
-    skills: skillsProps;
+    skills: skillProps[];
     projects: projectProps[];
 }

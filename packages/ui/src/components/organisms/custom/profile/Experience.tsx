@@ -18,7 +18,7 @@ const Experience = ({experience}:{experience:experienceProps[]}) => {
           >Internship</h2>
       </div>
       <div className='flex flex-col gap-4 max-w-[500px]'>
-          {experience.filter(exp=>exp.type===experienceType).map((exp, index) => (
+          {experience?.filter(exp=>exp.type===experienceType).map((exp, index) => (
               <ExperienceCard key={index} experience={exp} />
           ))}
       </div>

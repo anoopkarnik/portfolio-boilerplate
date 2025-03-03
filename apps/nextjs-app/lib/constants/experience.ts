@@ -9,34 +9,39 @@ export const experience:experienceProps[] = [
         projects: [
             {
             title: 'Support Bot Service',
-            techStack: ['Python', 'Flask', 'ReactJs', 'Spreadsheet', 'OpenAI'],
+            techStack: [
+                {title:'Python'}, {title:'Flask'}, {title:'ReactJs'}, {title:'Spreadsheet'}, 
+                {title:'OpenAI'}
+            ],
             contribution: 'Individual Contribution',
             description: 'Created an Assistant using Assistant API for Company FAQs.'
             },
             {
             title: 'Support Assistance with Call Support',
-            techStack: ['Rocket.Chat', 'ReactJs', 'Jitsi'],
+            techStack: [{title:'Rocket.Chat'}, {title:'ReactJs'}, {title:'Jitsi'}],
             contribution: 'Individual Contribution',
             description: `Build a customer support service for the company using open source tools and
                 frontend in our consumer app.`
             },
             {
             title: 'Data Definition Service',
-            techStack: ['Advanced Excel', 'Google Spreadhseet', 'VBA', 'Google App Script', 'Airflow'],
+            techStack: [{title:'Advanced Excel'}, {title:'Google Spreadhseet'}, {title:'VBA'},
+                {title: 'Google App Script'}, {title:'Airflow'}],
             contribution: 'Individual Contribution',
             description: `Created a Data Definition Excel workbook, where a client can define data and based
                 on selected options, the ETL workflow for that client gets created`
             },
             {
             title: 'Fhir Data Validation Service',
-            techStack: ['Python', 'Flask', 'Fhir','Kafka','Github actions','Google Spreadsheet'],
+            techStack: [{title:'Python'}, {title:'Flask'}, {title:'Fhir'},{title:'Kafka'},
+                {title:'Github actions'},{title:'Google Spreadsheet'}],
             contribution: 'Individual Contribution',
             description: `A Backend Validation Service which provides resource specific analytics on Fhir
                 Data received from clients.`
             },
             {
             title: 'Enterprise Matching Patient Index Service',
-            techStack: ['Java', 'Springboot'],
+            techStack: [{title:'Java'}, {title:'Springboot'}],
             contribution: 'Individual Contribution',
             description: `Created a Springboot backend service which triggers when new patient enters from
                 any enterprise, we run the matching backend service to find exact and probabilistic
@@ -44,14 +49,15 @@ export const experience:experienceProps[] = [
             },
             {
             title: 'Cloud Fhir Module',
-            techStack: ['Java', 'Springboot', 'Kafka'],
+            techStack: [{title:'Java'}, {title:'Springboot'}, {title:'Kafka'}],
             contribution: 'Part of 3-man Team',
             description: `Standardize Fhir Data using a defined config and migrate it from one Fhir server
                 client to Azure Fhir client with references updating in a schedule.`
             },
             {
             title: 'Soft Related Records Services',
-            techStack: ['Java', 'Springboot', 'Kafka', 'Python', 'Flask', 'Neo4j'],
+            techStack: [{title:'Java'}, {title:'Springboot'}, {title:'Kafka'},{title: 'Python'},
+                {title: 'Flask'}, {title:'Neo4j'}],
             contribution: 'Individual Contribution',
             description: `Every time a fhir resource is ingested or updated, we find all its related records and
                 update nodes in Neo4j`
@@ -67,7 +73,8 @@ export const experience:experienceProps[] = [
         projects: [
             {
                 title: 'Data Ingestion Pipelines',
-                techStack: ['Python', 'SQL', 'Elastic Search', 'Airflow', 'RDS', 'S3', 'Ec2'],
+                techStack: [{title:'Python'}, {title:'SQL'}, {title:'Elastic Search'}, 
+                    {title:'Airflow'}, {title:'RDS'}, {title:'S3'}, {title:'Ec2'}],
                 contribution: 'Individual Contribution',
                 description: `Members’ data files with the amount available to them which is weekly taken
                     from 6 insurance companies and ingestion into our Postgres database with
@@ -81,8 +88,8 @@ export const experience:experienceProps[] = [
             },
             {
                 title: 'Workflow and Rules Engine Service',
-                techStack: ['Java', 'Springboot', 'SES', 'Rds', 'Camunda Workflow Engine', 
-                    'Kie Rules Server'],
+                techStack: [{title:'Java'}, {title:'Springboot'}, {title:'SES'}, {title:'Rds'},
+                    {title: 'Camunda Workflow Engine'}, {title:'Kie Rules Server'}],
                 contribution: 'Individual Contribution',
                 description: `Created multiple consent workflows using the Camunda workflow engine with a
                     complex combination of user steps (variables are inputted) and backend
@@ -102,7 +109,7 @@ export const experience:experienceProps[] = [
         projects:[
             {
                 title: 'CRM (Paypal Singapore)',
-                techStack: ['SQL', 'Tableau', 'Advanced Excel'],
+                techStack: [{title:'SQL'}, {title:'Tableau'}, {title:'Advanced Excel'}],
                 contribution: 'Part of 3 person team',
                 description: `Structure Marketing Campaigns for the
                     next year based on analysis of campaigns from the previous years
@@ -110,7 +117,8 @@ export const experience:experienceProps[] = [
             },
             {
                 title: 'CRM (Paypal Chennai)',
-                techStack: ['SQL', 'Tableau', 'Advanced Excel', 'Python','VBA'],
+                techStack: [{title:'SQL'}, {title:'Tableau'}, {title:'Advanced Excel'}, 
+                    {title:'Python'},{title:'VBA'}],
                 contribution: 'Part of 5 person team',
                 description: `Stratiﬁed Random Sampling (Test/Control,
                     Test/Universal Control) and high value merchant model using
@@ -120,7 +128,7 @@ export const experience:experienceProps[] = [
             },
             {
                 title: 'Recommender System Pitch',
-                techStack: ['Python','Pyspark','Flask'],
+                techStack: [{title:'Python'},{title:'Pyspark'},{title:'Flask'}],
                 contribution: 'Individual Contribution',
                 description: `Single handedly helped in securing a
                     prospective food delivery client by making a sample recommender
@@ -129,7 +137,7 @@ export const experience:experienceProps[] = [
             },
             {
                 title: 'Data Premiere League Competition', 
-                techStack: ['Python','Scrapy'],
+                techStack: [{title:'Python'},{title:'Scrapy'}],
                 contribution: 'Individual Contribution',
                 description: `Created a web crawler to fetch all of
                     google play data for organizing a competition for a well-recognized
@@ -137,7 +145,7 @@ export const experience:experienceProps[] = [
             },
             {
                 title: 'Sales Prospect Converstion (Daimler)',
-                techStack: ['Advanced Excel', 'VBA'],
+                techStack: [{title:'Advanced Excel'},{title: 'VBA'}],
                 contribution: 'Individual Contribution',
                 description: `Created a tool in excel
                     using VBA which arranges the prospects and old customers based on
@@ -155,7 +163,8 @@ export const experience:experienceProps[] = [
         projects: [
             {
                 title: 'Air Surveillance in Indian Airspace (Bharat Electronics Limited) ',
-                techStack: ['Python', 'Flask','Tkinter','Socket.io'],
+                techStack: [{title:'Python'},{title: 'Flask'},{title:'Tkinter'},
+                    {title:'Socket.io'}],
                 contribution: 'Individual Contribution',
                 description: `Designed an ensemble learning approach with a neural network and
                     catboost algorithm for each kind of error detected to predict if a
@@ -174,7 +183,7 @@ export const experience:experienceProps[] = [
         projects: [
             {
                 title: 'Emotional Model',
-                techStack: ['hugging face', 'transformers', 'python'],
+                techStack: [{title:'hugging face'}, {title:'transformers'}, {title:'python'}],
                 contribution: 'Part of 3 person team',
                 description: `Worked on Sentiment Analysis Model to
                     determine which emotion (anger, peace, sad, happy, etc) a person is
@@ -182,7 +191,7 @@ export const experience:experienceProps[] = [
             },
             {
                 title: 'Information Retrieval Extraction Model',
-                techStack: ['hugging face', 'transformers', 'python'],
+                techStack: [{title:'hugging face'}, {title:'transformers'}, {title:'python'}],
                 contribution: 'Part of 3 person team',
                 description: `Worked on getting the
                     user proﬁle information based on the chat messages in the form of
@@ -190,7 +199,7 @@ export const experience:experienceProps[] = [
             },
             {
                 title: 'Chatbot',
-                techStack: ['aws lightsail', 'flask', 'python'],
+                techStack: [{title:'aws lightsail'}, {title:'flask'}, {title:'python'}],
                 contribution: 'Part of 3 person team',
                 description: `Worked on giving a persona to our chatbot
                     and storing messages of every session and using these messages in a

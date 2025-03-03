@@ -1,23 +1,25 @@
-import { skillsProps } from '@repo/ts-types/profile/skills'
-import React from 'react'
+"use client"
+import { skillProps } from '@repo/ts-types/profile/skills'
+import SkillsList from '../../../molecules/custom/Profile/v1/SkillsList'
+import { useEffect, useState } from 'react'
+import { Type } from 'lucide-react'
 
-const Skills = ({skills}:{skills:skillsProps}) => {
+const Skills = ({skills}:{skills:skillProps[]}) => {
+  const [skillTypes, setSkillTypes] = useState<any>([])
+
+  useEffect(() => {
+    const types = skills?.map(skill=>skill.type)
+    setSkillTypes(new Set(types))
+  }, [skills])
+  
   return (
-      <div className='flex flex-col gap-4 '>
-        {Object.keys(skills).map((skill, index) => (
-          <div key={index} className='flex flex-col gap-4'>
-            <h2 className='text-xl font-semibold'>{skill}</h2>
-            <div className='flex flex-wrap gap-4'>
-              {skills[skill]?.map((s, i) => (
-                <div key={i} className='flex flex-col gap-2 items-center justify-center 
-                border-[1px] p-4 cursor-pointer rounded-md hover:bg-accent'>
-                  {s.icon}
-                  <span>{s.title}</span>
-                </div>
-              ))}
+      <div className='flex flex-col justify-start items-start gap-4'>
+          {[...skillTypes].map((type, index) => (
+            <div key={index} className='flex flex-col gap-2 items-start '>
+              <h2 key={index} className='text-subtitle'>{type}</h2>
+              <SkillsList subSkills={skills.filter((skill) => skill.type === type)}/>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
   )
 }

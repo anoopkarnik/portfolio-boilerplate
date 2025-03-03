@@ -24,8 +24,9 @@ const ProjectDetails1 = ({project}:{project:projectProps}) => {
                <div className={cn('flex items-center justify-center gap-4 pt-10',
                     device === 'desktop' && 'flex-col gap-4'
                   )}>
+                      {project.demoImage && 
                       <Image src={project.demoImage} width={device === 'mobile' ? 200 : 400} 
-                      height={device === 'mobile' ? 200 : 400} alt='logo' className='rounded-2xl '/>
+                      height={device === 'mobile' ? 200 : 400} alt='logo' className='rounded-2xl '/>}
                       <div className='flex flex-col items-center justify-center gap-4'>
                         <p className='text-center text-2xl'>
                             {project.title}

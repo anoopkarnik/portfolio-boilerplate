@@ -39,7 +39,7 @@ const ProfileDetails = ({about,education,experience, skills, projects}:profileDe
             </div>
         </CardTitle>
         <CardContent>
-            {activeTab === 'about' && <About  aboutMe={about.aboutMe} myJourney={about.myJourney} whatIAmWorkingOn={about.whatIAmWorkingOn} />}
+            {activeTab === 'about' && <About about={about}/>}
             {activeTab === 'education' && <Education education={education}/>}
             {activeTab === 'experience' && <Experience experience={experience}/>}
             {activeTab === 'skills' && <Skills skills={skills}/>}

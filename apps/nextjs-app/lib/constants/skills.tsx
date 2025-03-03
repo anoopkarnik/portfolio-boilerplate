@@ -1,83 +1,58 @@
-import { skillsProps } from "@repo/ts-types/profile/skills"
-import { SiCanva, SiCloudflare, SiCss3, SiDavinciresolve, SiDiscord, SiDocker, SiElasticsearch, SiExpress, SiFigma, SiFlask, SiGithub,
-     SiGithubactions,
-     SiGooglecloud, SiHtml5, SiJavascript, SiJest, SiJira, SiLinkedin, SiMongodb, SiN8N, SiNeo4J, SiNextdotjs, SiNodedotjs, 
-     SiNotion, SiNpm, SiObsstudio, SiOpenai, SiPostgresql, SiPrisma, SiPython, SiReact, SiShadcnui, SiSpringboot, 
-     SiTailwindcss, SiTypescript, SiVercel, 
-     SiVitest,
-     SiX,
-     SiYoutube} from "react-icons/si"
-import { FaAws, FaJava } from "react-icons/fa";
-import { TbCircleLetterC, TbCircleLetterH } from "react-icons/tb";
+import { skillProps} from "@repo/ts-types/profile/skills"
 
+export const skills:skillProps[] = [
+    {title: 'Javascript',type: "Programming Language"},
+    {title: 'Typescript',type: "Programming Language"},
+    {title: 'Python',type: "Programming Language"},
+    {title: 'Java',type: "Programming Language"},
 
+    {title: 'HTML', type: "Frontend"},
+    {title: 'CSS', type: "Frontend"},
+    {title: 'React', type: "Frontend"},
+    {title: 'React Native', type: "Frontend"},
+    {title: 'Tailwind CSS', type: "Frontend"},
+    {title: 'Shadcn', type: "Frontend"},
+    {title: 'Next.js', type: "Frontend"},
 
-export const skills:skillsProps = {
-    "Languages": [
-        {title: 'Javascript',icon: <SiJavascript/>,},
-        {title: 'Typescript',icon: <SiTypescript />,},
-        {title: 'Python',icon: <SiPython />,},
-        {title: 'Java',icon: <FaJava />,},
-    ],
-    "Frontend": [
-        {title: 'HTML',icon: <SiHtml5 />,},
-        {title: 'CSS',icon: <SiCss3 />,},
-        {title: 'React',icon: <SiReact />,},
-        {title: 'React Native',icon: <SiReact />,},
-        {title: 'Tailwind CSS',icon: <SiTailwindcss />,},
-        {title: 'Shadcn', icon: <SiShadcnui />},
-        {title: 'Next.js', icon: <SiNextdotjs />},
-    ],
-    "Backend":[
-        {title: 'Node.js',icon: <SiNodedotjs/>,},
-        {title: 'Express.js',icon: <SiExpress/>,},
-        {title: 'Flask',icon: <SiFlask/>,},
-        {title: 'Springboot', icon: <SiSpringboot/>},
-        {title: 'Next.js', icon: <SiNextdotjs />},
-    ],
-    "AI & Automations": [
-        {title: 'OpenAI', icon: <SiOpenai/>},
-        {title: 'n8n', icon: <SiN8N/>},
-    ],
-    "Devops": [
-        {title: 'AWS', icon: <FaAws/>},
-        {title: 'Docker', icon: <SiDocker/>},
-        {title: 'Cloudflare', icon: <SiCloudflare/>},
-        {title: 'Vercel', icon: <SiVercel/>},
-        {title: 'Npm Deployment', icon: <SiNpm/>},
-        {title: 'Github', icon: <SiGithub/>},
-        {title: 'Google Cloud', icon: <SiGooglecloud/>},
-        {title: 'Coolify', icon: <TbCircleLetterC/>},
-        {title: 'Github Actions', icon: <SiGithubactions/>},
-    ],
-    "Databases": [
-        {title: 'Postgresql', icon: <SiPostgresql/>},
-        {title: 'MongoDB', icon: <SiMongodb/>},
-        {title: 'Prisma', icon: <SiPrisma/>},
-        {title: 'Elastic Search', icon: <SiElasticsearch/>},
-        {title: 'Neo4j', icon: <SiNeo4J/>}
-    ],
-    "Project Management": [
-        {title: 'Notion', icon: <SiNotion/>},
-        {title: 'Jira', icon: <SiJira/>},
-        {title: 'Huly', icon: <TbCircleLetterH/>},
-    ],
-    "UI/UX": [
-        {title: 'Figma', icon: <SiFigma/>},
-    ],
-    "Testing": [
-        {title: 'Vitest', icon: <SiVitest/>},
-        {title: 'Jest', icon: <SiJest/>},
-    ],
-    "Content Creation": [
-        {title: 'Youtube', icon: <SiYoutube/>},
-        {title: 'LinkedIn', icon: <SiLinkedin/>},
-        {title: 'Twitter', icon: <SiX/>},
-        {title: 'Discord', icon: <SiDiscord/>},
-        {title: 'Canva', icon: <SiCanva/>},
-        {title: 'OBS Studio', icon: <SiObsstudio/>}, 
-        {title: 'Davinci Resolve', icon: <SiDavinciresolve/>},
-    ],
-    "Miscellaneous": [],
+    {title: 'Node.js', type: "Backend"},
+    {title: 'Express.js', type: "Backend"},
+    {title: 'Flask', type: "Backend"},
+    {title: 'Springboot', type: "Backend"},
+    {title: 'Next.js', type: "Backend"},
 
-}
+    {title: 'OpenAI', type: "AI & Automations"},
+    {title: 'n8n', type: "AI & Automations"},
+
+    {title: 'AWS', type: "Devops"},
+    {title: 'Docker', type: "Devops"},
+    {title: 'Cloudflare', type: "Devops"},
+    {title: 'Vercel', type: "Devops"},
+    {title: 'Npm Deployment', type: "Devops"},
+    {title: 'Github', type: "Devops"},
+    {title: 'Google Cloud', type: "Devops"},
+    {title: 'Coolify', type: "Devops"},
+    {title: 'Github Actions', type: "Devops"},
+
+    {title: 'Postgresql', type: "Databases"},
+    {title: 'MongoDB', type: "Databases"},
+    {title: 'Prisma', type: "Databases"},
+    {title: 'Elastic Search', type: "Databases"},
+    {title: 'Neo4j', type: "Databases"},
+
+    {title: 'Notion', type: "Project Management"},
+    {title: 'Jira', type: "Project Management"},
+    {title: 'Huly', type: "Project Management"},
+
+    {title: 'Figma', type: "UI/UX"},
+
+    {title: 'Vitest', type: "Testing"},
+    {title: 'Jest', type: "Testing"},
+
+    {title: 'Youtube', type: "Content Creation"},
+    {title: 'LinkedIn', type: "Content Creation"},
+    {title: 'Twitter', type: "Content Creation"},
+    {title: 'Discord', type: "Content Creation"},
+    {title: 'Canva', type: "Content Creation"},
+    {title: 'OBS Studio', type: "Content Creation"}, 
+    {title: 'Davinci Resolve', type: "Content Creation"},
+]

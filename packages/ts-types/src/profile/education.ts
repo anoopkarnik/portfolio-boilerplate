@@ -3,5 +3,5 @@ export interface educationProps {
     degree: string;
     institution: string;
     cgpa: string;
-    courses:string[];
+    courses:string;
 }

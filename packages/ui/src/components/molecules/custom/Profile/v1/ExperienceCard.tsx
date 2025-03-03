@@ -1,4 +1,5 @@
-import { experienceProps, projectProps } from '@repo/ts-types/profile/experience'
+import { experienceProps} from '@repo/ts-types/profile/experience'
+import { projectProps } from '@repo/ts-types/profile/project'
 import Image from 'next/image'
 import React from 'react'
 
@@ -11,10 +12,10 @@ const ExperienceCard = ({experience}:{experience:experienceProps}) => {
         </div>
         <div className="text-sm text-primary">{experience.company}</div>
         <div className='flex flex-col gap-2'>
-          {experience.projects.map((project:projectProps,index:number) => (
+          {experience?.projects?.map((project:projectProps,index:number) => (
             <div key={index} className='flex flex-col'>
                 <div className='text-paragraph'>{project.title}</div>
-                <div className='text-description'>({project.techStack.map((tech:string) => tech+",")})</div>
+                <div className='text-description'>({project.techStack?.map((tech) => tech.title + ", " )})</div>
                 <div className='text-description'>{project.description}</div>
             </div>
           ))}

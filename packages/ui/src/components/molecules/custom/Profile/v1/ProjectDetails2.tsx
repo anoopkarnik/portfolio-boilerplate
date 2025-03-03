@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDeviceType } from '../../../../../hooks/use-device'
-import { Card, CardContent, CardTitle } from '../../../shadcn/card'
+import { Card, CardContent, CardHeader, CardTitle } from '../../../shadcn/card'
 import { cn } from '../../../../../lib/utils'
 import { projectProps } from '@repo/ts-types/profile/project'
 import { Minus } from 'lucide-react'
@@ -17,7 +17,7 @@ const ProfileDetails2 = ({project}:{project:projectProps}) => {    const device 
       <CardContent>
           <Accordion type='multiple' defaultValue={['open-source','content','notion','website']}>
               {project.openSourceDetails && <AccordionItem value='open-source'>
-                  <AccordionTrigger>Open Source Details</AccordionTrigger>
+                  <AccordionTrigger className='border-none outline-none'>Open Source Details</AccordionTrigger>
                   <AccordionContent>
                       <div className='flex flex-col flex-wrap text-paragraph '>
                           <div className='flex justify-between items-center gap-4 '>

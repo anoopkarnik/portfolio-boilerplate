@@ -18,7 +18,7 @@ const Projects = ({projects}:{projects:projectProps[]}) => {
           >Notion Template</h2>
       </div>
       <div className='flex flex-wrap gap-4 '>
-          {projects.filter(project=>project.type===projectType).map((project, index) => (
+          {projects?.filter(project=>project.type===projectType).map((project, index) => (
               <ProjectCard key={index} project={project}/>
           ))}
       </div>

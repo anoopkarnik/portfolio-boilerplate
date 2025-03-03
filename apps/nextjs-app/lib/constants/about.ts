@@ -1,4 +1,4 @@
-import { aboutProps } from "@repo/ts-types/profile/about";
+import { aboutProps, whatIAmWorkingOnProps } from "@repo/ts-types/profile/about";
 
 
 
@@ -14,7 +14,7 @@ export const myJourney = `I began my career as a Mechanical Engineer, exploring 
     I pursued my MS in Computer Science at IIIT Hyderabad, specializing in AI and publishing two papers 
     in A-level conferences. Post-graduation, I embarked on a journey as a Data/Machine Learning Engineer,
      expanding my expertise to full-stack development and building products from concept to deployment.`
-export const whatIAmWorkingOn = [
+export const whatIAmWorkingOn:whatIAmWorkingOnProps[] = [
     {
         imgSrc: '/code.png',
         title: 'Micro SaaS Products',

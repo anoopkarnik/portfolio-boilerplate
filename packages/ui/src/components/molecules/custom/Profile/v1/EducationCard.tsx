@@ -12,8 +12,8 @@ const EducationCard = ({year,degree,institution, cgpa,courses}: {
         </div>
         <div className="text-sm text-primary">{institution}</div>
         <div className="text-sm">{cgpa}</div>
-        <div className="text-xs  text-gray-500 flex gap-1">
-            <div>{courses.map((course:string) => course+",")}</div>
+        <div className="text-description">
+            <p>{courses}</p>
         </div>
     </div>
   )

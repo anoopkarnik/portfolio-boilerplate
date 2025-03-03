@@ -28,14 +28,14 @@ export interface notionDetailsProps {
 
 export interface projectProps {
     title: string;
-    type: string;
-    description: string;
-    techStack: skillProps[];
-    demoImage: string;
-    contribution: string;
+    type?: string;
+    description?: string;
+    techStack?: skillProps[];
+    demoImage?: string;
+    contribution?: string;
     openSourceDetails?: openSourceDetailsProps;
     websiteDetails?: websiteDetailsProps;
     contentDetails?: contentDetailsProps;
     notionDetails?: notionDetailsProps;
-    featured: boolean;
+    featured?: boolean;
 }                                                                                                                                               
