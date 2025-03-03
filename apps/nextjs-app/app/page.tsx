@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 
 import Profile from '@repo/ui/organisms/custom/profile/Profile'
@@ -14,8 +14,6 @@ import { experience } from '../lib/constants/experience'
 import { skills } from '../lib/constants/skills'
 import { projects } from '../lib/constants/projects'
 import { getPortfolioDetails } from '../actions/strapi'
-import { aboutProps } from '@repo/ts-types/profile/about'
-
 
 const Home = () => {
   const device = useDeviceType()
