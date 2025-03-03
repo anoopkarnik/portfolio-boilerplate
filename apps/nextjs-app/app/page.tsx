@@ -20,30 +20,12 @@ import { aboutProps } from '@repo/ts-types/profile/about'
 const Home = () => {
   const device = useDeviceType()
   const [profileDetails, setProfileDetails] = useState(profile)
-  const [aboutDetails, setAboutDetails] = useState<aboutProps>(about)
+  const [aboutDetails, setAboutDetails] = useState(about)
   const [educationDetails, setEducationDetails] = useState(education)
   const [experienceDetails, setExperienceDetails] = useState(experience)
   const [skillsDetails, setSkillsDetails] = useState(skills)
   const [projectsDetails, setProjectsDetails] = useState(projects)
   const [constantsType, setConstantsType] = useState('file')
-  const [loading, setLoading] = useState(false)
-  
-  useEffect(() => {
-    const fetchData = async () => {
-      setLoading(true)
-      if(constantsType === 'cms'){
-        const portfolioDetails = await getPortfolioDetails()
-        setAboutDetails(portfolioDetails.about)
-        setProfileDetails(portfolioDetails.profile)
-        setEducationDetails(portfolioDetails.education)
-        setExperienceDetails(portfolioDetails.experience)
-        setSkillsDetails(portfolioDetails.skills)
-        setProjectsDetails(portfolioDetails.projects)
-      }
-      setLoading(false)
-    }
-    fetchData()
-  }, [])
 
   const handleConstantsType = async () => {
       if (constantsType === 'file') {
@@ -66,15 +48,6 @@ const Home = () => {
           setConstantsType('file')
       }
   }
-
-  if (loading) {
-    return (
-      <div className='flex justify-center items-center h-screen'>
-        <p>Loading...</p>
-      </div>
-    )
-  }
-
 
   return (
     <div className={cn('flex justify-center my-10 gap-10 mx-6 ',
