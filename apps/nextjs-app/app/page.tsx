@@ -25,7 +25,7 @@ const Home = () => {
   const [experienceDetails, setExperienceDetails] = useState(experience)
   const [skillsDetails, setSkillsDetails] = useState(skills)
   const [projectsDetails, setProjectsDetails] = useState(projects)
-  const [constantsType, setConstantsType] = useState('cms')
+  const [constantsType, setConstantsType] = useState('file')
   const [loading, setLoading] = useState(false)
   
   useEffect(() => {
