@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
 import Profile from '@repo/ui/organisms/custom/profile/Profile'
@@ -25,24 +25,39 @@ const Home = () => {
   const [projectsDetails, setProjectsDetails] = useState(projects)
   const [constantsType, setConstantsType] = useState(process.env.NEXT_PUBLIC_BASE_DATA_SOURCE || 'file')
 
+
+  useEffect(() => {
+    if (constantsType === 'cms') {
+      updateDataFromStrapiCms()
+    }
+  }, [])
+
+  const updateDataFromStrapiCms = async () => {
+    const portfolioDetails = await getPortfolioDetails()
+    setAboutDetails(portfolioDetails.about)
+    setProfileDetails(portfolioDetails.profile)
+    setEducationDetails(portfolioDetails.education)
+    setExperienceDetails(portfolioDetails.experience)
+    setSkillsDetails(portfolioDetails.skills)
+    setProjectsDetails(portfolioDetails.projects)
+  }
+
+  const updateDataFromFiles = async () => {
+    setAboutDetails(about)
+    setProfileDetails(profile)
+    setEducationDetails(education)
+    setExperienceDetails(experience)
+    setSkillsDetails(skills)
+    setProjectsDetails(projects)
+  }
+
   const handleConstantsType = async () => {
       if (constantsType === 'file') {
-          const portfolioDetails = await getPortfolioDetails()
-          setAboutDetails(portfolioDetails.about)
-          setProfileDetails(portfolioDetails.profile)
-          setEducationDetails(portfolioDetails.education)
-          setExperienceDetails(portfolioDetails.experience)
-          setSkillsDetails(portfolioDetails.skills)
-          setProjectsDetails(portfolioDetails.projects)
+          await updateDataFromStrapiCms()
           setConstantsType('cms')
       }
       else {
-          setAboutDetails(about)
-          setProfileDetails(profile)
-          setEducationDetails(education)
-          setExperienceDetails(experience)
-          setSkillsDetails(skills)
-          setProjectsDetails(projects)
+          await updateDataFromFiles()
           setConstantsType('file')
       }
   }
