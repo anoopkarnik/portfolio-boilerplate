@@ -23,7 +23,7 @@ const Home = () => {
   const [experienceDetails, setExperienceDetails] = useState(experience)
   const [skillsDetails, setSkillsDetails] = useState(skills)
   const [projectsDetails, setProjectsDetails] = useState(projects)
-  const [constantsType, setConstantsType] = useState('file')
+  const [constantsType, setConstantsType] = useState(process.env.NEXT_PUBLIC_BASE_DATA_SOURCE || 'file')
 
   const handleConstantsType = async () => {
       if (constantsType === 'file') {

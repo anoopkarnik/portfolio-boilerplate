@@ -6,6 +6,8 @@
 
 Every developer needs a portfolio. As the future of software is moving away from jobs to freelancing, consulting and solopreneurship. This is a minimal, reactive, portfolio of mine which can be easily modified, built using turborepo framework with next js packages
 
+My Portfolio Website built using this - https://anoopkarnik.net
+
 ## Starting Locally
 
 Clone the repo using:
@@ -14,9 +16,21 @@ Clone the repo using:
 npx portfolio-boilerplate@latest
 ```
 
-## Modifying Landing Page, Legal Pages data
+## Modifying data in the code
+
+### Using Constants
 
 1) In apps/nextjs-app/lib/constants/, you can modify profile data section wise in the files.
+
+### Using Strapi CMS
+
+# COMING SOON
+
+I have got it working on my site. Still working out the bugs to run them locally with 
+typescript types already defined the the CMS
+
+
+
 
 
 ## Deploy Your Own
