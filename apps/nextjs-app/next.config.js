@@ -4,6 +4,7 @@ const nextConfig = {
   images:{
     remotePatterns: [
         {hostname: 'strapi.bayesian-labs.com', protocol:'https'},
+        {hostname: 'localhost', protocol:'http'},
     ]
 } // Disable Strict Mode
 };

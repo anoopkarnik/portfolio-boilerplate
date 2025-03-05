@@ -1,0 +1,61 @@
+{
+  "collectionName": "components_profile_props_profiles",
+  "info": {
+    "displayName": "profile"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "logo": {
+      "type": "string"
+    },
+    "details": {
+      "type": "text"
+    },
+    "title": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "resume": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "emailComposeLink": {
+      "type": "string"
+    },
+    "githubLink": {
+      "type": "string"
+    },
+    "linkedinLink": {
+      "type": "string"
+    },
+    "youtubeLink": {
+      "type": "string"
+    },
+    "twitterLink": {
+      "type": "string"
+    },
+    "discordLink": {
+      "type": "string"
+    },
+    "logoMedia": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

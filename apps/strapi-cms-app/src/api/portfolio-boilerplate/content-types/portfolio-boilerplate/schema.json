@@ -1,0 +1,50 @@
+{
+  "kind": "singleType",
+  "collectionName": "portfolio_boilerplates",
+  "info": {
+    "singularName": "portfolio-boilerplate",
+    "pluralName": "portfolio-boilerplates",
+    "displayName": "Portfolio-boilerplate",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "about": {
+      "displayName": "about",
+      "type": "component",
+      "repeatable": false,
+      "component": "about-props.about"
+    },
+    "profile": {
+      "displayName": "profile",
+      "type": "component",
+      "repeatable": false,
+      "component": "profile-props.profile"
+    },
+    "education": {
+      "displayName": "education",
+      "type": "component",
+      "repeatable": true,
+      "component": "education-props.education"
+    },
+    "projects": {
+      "displayName": "project",
+      "type": "component",
+      "repeatable": true,
+      "component": "project-props.project"
+    },
+    "experience": {
+      "displayName": "experience",
+      "type": "component",
+      "repeatable": true,
+      "component": "experience-props.experience"
+    },
+    "skills": {
+      "type": "component",
+      "repeatable": true,
+      "component": "tech-stack-props.tech-stack"
+    }
+  }
+}

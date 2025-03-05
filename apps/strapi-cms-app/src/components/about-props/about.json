@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_about_props_abouts",
+  "info": {
+    "displayName": "about",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "aboutMe": {
+      "type": "text"
+    },
+    "myJourney": {
+      "type": "text"
+    },
+    "whatIAmWorkingOn": {
+      "displayName": "whatIAmWorkingOn",
+      "type": "component",
+      "repeatable": true,
+      "component": "what-i-am-working-on-props.what-i-am-working-on"
+    }
+  }
+}

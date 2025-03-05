@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_what_i_am_working_on_props_what_i_am_working_ons",
+  "info": {
+    "displayName": "whatIAmWorkingOn"
+  },
+  "options": {},
+  "attributes": {
+    "imgSrc": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "imgSrcMedia": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

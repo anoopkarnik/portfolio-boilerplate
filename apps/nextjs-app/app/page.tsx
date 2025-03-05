@@ -14,6 +14,8 @@ import { experience } from '../lib/constants/experience'
 import { skills } from '../lib/constants/skills'
 import { projects } from '../lib/constants/projects'
 import { getPortfolioDetails } from '../actions/strapi'
+import { MdOutlineModeEdit } from "react-icons/md";
+
 
 const Home = () => {
   const device = useDeviceType()
@@ -30,7 +32,7 @@ const Home = () => {
     if (constantsType === 'cms') {
       updateDataFromStrapiCms()
     }
-  }, [])
+  }, [constantsType])
 
   const updateDataFromStrapiCms = async () => {
     const portfolioDetails = await getPortfolioDetails()
@@ -63,15 +65,20 @@ const Home = () => {
   }
 
   return (
-    <div className={cn('flex justify-center my-10 gap-10 mx-6 ',
-      device === 'tablet' && 'flex-col items-center ',
-      device === 'mobile' && 'flex-col items-center'
-    )}>
-      <Profile profile={profileDetails} constantsType={constantsType} 
-      handleConstantsType={handleConstantsType}/>
-      <ProfileDetails about={aboutDetails} education={educationDetails} experience={experienceDetails} 
-      skills={skillsDetails} projects={projectsDetails}/>
-    </div>
+    <>
+      <div className='fixed z-[999999] bottom-2 right-2 cursor-pointer bg-accent opacity-70 hover:opacity-100 rounded-full p-2'>
+        <MdOutlineModeEdit className='text-2xl text-primary'/>
+      </div>
+      <div className={cn('flex justify-center my-10 gap-10 mx-6 relative ',
+        device === 'tablet' && 'flex-col items-center ',
+        device === 'mobile' && 'flex-col items-center'
+      )}>
+        <Profile profile={profileDetails} constantsType={constantsType} 
+        handleConstantsType={handleConstantsType}/>
+        <ProfileDetails about={aboutDetails} education={educationDetails} experience={experienceDetails} 
+        skills={skillsDetails} projects={projectsDetails}/>
+      </div>
+    </>
   )
 }
 

@@ -21,7 +21,11 @@
     "type": "git",
     "url": "https://github.com/anoopkarnik/portfolio-boilerplate.git"
   },
-  "keywords": ["developer", "portfolio", "cli"],
+  "keywords": [
+    "developer",
+    "portfolio",
+    "cli"
+  ],
   "author": "Anoop Karnik",
   "license": "MIT",
   "engines": {
@@ -35,6 +39,8 @@
   "dependencies": {
     "@next/third-parties": "^15.1.5",
     "@tabler/icons-react": "^3.28.1",
+    "ajv": "^8.17.1",
+    "ajv-draft-04": "^1.0.0",
     "framer-motion": "^11.18.1"
   }
 }
