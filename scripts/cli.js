@@ -12,8 +12,11 @@ const main = () => {
   console.log(`Cloning the repository into ${targetDir}...`);
   execSync(`git clone --depth=1 ${repoUrl} ${targetDir}`, { stdio: 'inherit' });
 
-  console.log('Copying environment file...');
-  execSync(`cp ${path.join(targetDir, '.env.example.nextjs-app')} ${path.join(targetDir, 'apps/nextjs-app/.env')}`, { stdio: 'inherit' });
+  console.log('Copying environment file for next-js app...');
+  execSync(`cp ${path.join(targetDir, 'apps/nextjs-app/.env.example')} ${path.join(targetDir, 'apps/nextjs-app/.env')}`, { stdio: 'inherit' });
+
+  console.log('Copying environment file for strapi-cms app...');
+  execSync(`cp ${path.join(targetDir, 'apps/strapi-cms-app/.env.example')} ${path.join(targetDir, 'apps/strapi-cms-app/.env')}`, { stdio: 'inherit' });
 
   console.log('Installing dependencies...');
   execSync(`cd ${targetDir} && npm install`, { stdio: 'inherit' });

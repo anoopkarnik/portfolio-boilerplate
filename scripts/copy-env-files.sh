@@ -1,1 +1,0 @@
-cp .env.example.nextjs-app apps/nexjs-app/.env
