@@ -1,7 +1,7 @@
 {
   "name": "portfolio-boilerplate",
   "private": false,
-  "version": "1.2.1",
+  "version": "1.2.2",
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
