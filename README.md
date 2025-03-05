@@ -74,7 +74,7 @@ Deploy your portfolio in seconds using Vercel:
 If you're self-hosting:
 
 1) Deploy Next.js app via Vercel, Netlify, or any Node.js server
-2) Deploy Strapi CMS on a VPS, DigitalOcean, or Railway
+2) Deploy Strapi CMS on a VPS, DigitalOcean, Railway, Heroku or Coolify
 
 ## 🤝 Contributing
 
@@ -87,10 +87,13 @@ We welcome contributions! To contribute:
 📖 Check out the contribution guide:
 
 [CONTRIBUTING](/docs/CONTRIBUTING.md) 
+
 [CODE_OF_CONDUCT](/docs/CODE_OF_CONDUCT.md)
+
 [PULL_REQUEST](/docs/pull_request_template.md)
 
 Report Issues & Feature Requests:
+
 🐞 Found a bug? Use [BUG_REPORT](/docs/ISSUE_TEMPLATE/bug_report.md)
 💡 Have an idea? Submit a [FEATURE_REQUEST](/docs/ISSUE_TEMPLATE/feature_request.md)
 
