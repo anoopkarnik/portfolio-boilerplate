@@ -2,7 +2,6 @@
 import { skillProps } from '@repo/ts-types/profile/skills'
 import SkillsList from '../../../molecules/custom/Profile/v1/SkillsList'
 import { useEffect, useState } from 'react'
-import { Type } from 'lucide-react'
 
 const Skills = ({skills}:{skills:skillProps[]}) => {
   const [skillTypes, setSkillTypes] = useState<any>([])

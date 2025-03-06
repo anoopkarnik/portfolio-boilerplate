@@ -15,7 +15,7 @@ const ProfileDetails = ({about,education,experience, skills, projects}:profileDe
     const [activeTab, setActiveTab] = useState('about')
     const device = useDeviceType()
   return (
-    <Card className={cn('min-h-[700px] min-w-[50%] overflow-y-auto ',
+    <Card className={cn('min-h-[700px] min-w-[50%] overflow-visible ',
         device === 'desktop' && 'max-w-[800px]',
         device !== 'desktop' && 'w-full'
     )}>
@@ -27,12 +27,12 @@ const ProfileDetails = ({about,education,experience, skills, projects}:profileDe
                         <Minus size={50}/>
                     </p>
                 </div>
-                {device !='mobile' && 
-                <div className='flex justify-end gap-6 bg-accent rounded-tr-md rounded-bl-md text-sm font-medium p-4'>
+                {device !=='mobile' && 
+                <div className='flex justify-end gap-6 bg-accent rounded-tr-md rounded-bl-md text-sm font-medium p-4 z-[999999]'>
                     <ProfileTabs activeTab={activeTab} setActiveTab={setActiveTab}/>
                 </div>}
                 {device === 'mobile' && 
-                <div className='fixed bottom-0 left-[10%] right-[10%] flex justify-center bg-accent rounded-t-md text-xs font-light gap-2 flex-wrap sm:gap-6 sm:text-sm sm:font-medium p-4'>
+                <div className='fixed bottom-0 left-[10%] right-[10%] flex justify-center bg-accent rounded-t-md text-xs font-light gap-2 flex-wrap sm:gap-6 sm:text-sm sm:font-medium p-4 z-[999999]'>
                     <ProfileTabs activeTab={activeTab} setActiveTab={setActiveTab}/>
                 </div>
                 }

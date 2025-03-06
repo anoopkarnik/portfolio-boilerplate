@@ -5,7 +5,7 @@ import React from 'react'
 
 const ExperienceCard = ({experience}:{experience:experienceProps}) => {
   return (
-    <div className="flex flex-col bg-accent p-4 rounded-sm gap-2">
+    <div className="flex flex-col bg-accent p-4 rounded-sm gap-2 overflow-hidden">
         <div className="flex justify-between items-center">
             <div className='text-lg font-bold'>{experience.position}</div>
             <div className='text-sm font-light'>{experience.year}</div>
