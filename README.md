@@ -42,7 +42,7 @@ npm run dev
 
 # Start Strapi CMS (In a separate terminal)
 cd apps/strapi-cms
-npm run dev
+npm run dev #Admin Username - guest@bayesian-labs.com #Admin Password - Password1
 ```
 
 ## 🛠 Modifying Your Portfolio
