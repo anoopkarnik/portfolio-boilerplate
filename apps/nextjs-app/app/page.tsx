@@ -1,81 +1,27 @@
-'use client'
+import ErrorState from "@/components/ErrorState";
+import HomeView from "@/components/HomeView";
+import LoadingState from "@/components/LoadingState";
+import { getQueryClient, trpc } from "@/trpc/server"
+import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
+import { Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 
-import React, { useEffect, useState } from 'react'
-
-
-import Profile from '@repo/ui/organisms/custom/profile/Profile'
-import {useDeviceType}  from '@repo/ui/hooks/use-device'
-import { cn } from '@repo/ui/lib/utils'
-import ProfileDetails from '@repo/ui/organisms/custom/profile/ProfileDetails'
-import { profile } from '../lib/constants/profile'
-import { education } from '../lib/constants/education'
-import { about } from '../lib/constants/about'
-import { experience } from '../lib/constants/experience'
-import { skills } from '../lib/constants/skills'
-import { projects } from '../lib/constants/projects'
-import { getPortfolioDetails } from '../actions/strapi'
-
-
-const Home = () => {
-  const device = useDeviceType()
-  const [profileDetails, setProfileDetails] = useState(profile)
-  const [aboutDetails, setAboutDetails] = useState(about)
-  const [educationDetails, setEducationDetails] = useState(education)
-  const [experienceDetails, setExperienceDetails] = useState(experience)
-  const [skillsDetails, setSkillsDetails] = useState(skills)
-  const [projectsDetails, setProjectsDetails] = useState(projects)
-  const [constantsType, setConstantsType] = useState(process.env.NEXT_PUBLIC_BASE_DATA_SOURCE || 'file')
-
-
-  useEffect(() => {
-    if (constantsType === 'cms') {
-      updateDataFromStrapiCms()
-    }
-  }, [constantsType])
-
-  const updateDataFromStrapiCms = async () => {
-    const portfolioDetails = await getPortfolioDetails()
-    setAboutDetails(portfolioDetails.about)
-    setProfileDetails(portfolioDetails.profile)
-    setEducationDetails(portfolioDetails.education)
-    setExperienceDetails(portfolioDetails.experience)
-    setSkillsDetails(portfolioDetails.skills)
-    setProjectsDetails(portfolioDetails.projects)
-  }
-
-  const updateDataFromFiles = async () => {
-    setAboutDetails(about)
-    setProfileDetails(profile)
-    setEducationDetails(education)
-    setExperienceDetails(experience)
-    setSkillsDetails(skills)
-    setProjectsDetails(projects)
-  }
-
-  const handleConstantsType = async () => {
-      if (constantsType === 'file') {
-          await updateDataFromStrapiCms()
-          setConstantsType('cms')
-      }
-      else {
-          await updateDataFromFiles()
-          setConstantsType('file')
-      }
-  }
-
+export const revalidate = 600;
+const HomePage = async () => {
+  const queryClient = getQueryClient();
+  await Promise.all([
+    // queryClient.ensureQueryData(trpc.portfolio.getPortfolioDataFromStrapi.queryOptions()),
+    queryClient.ensureQueryData(trpc.portfolio.getPortfolioDataFromNotion.queryOptions()),
+  ]);
   return (
-    <>
-      <div className={cn('flex justify-center my-10 gap-10 mx-6 relative ',
-        device === 'tablet' && 'flex-col items-center ',
-        device === 'mobile' && 'flex-col items-center'
-      )}>
-        <Profile profile={profileDetails} constantsType={constantsType} 
-        handleConstantsType={handleConstantsType}/>
-        <ProfileDetails about={aboutDetails} education={educationDetails} experience={experienceDetails} 
-        skills={skillsDetails} projects={projectsDetails}/>
-      </div>
-    </>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <Suspense fallback={<LoadingState title='Retrieving' description='Please wait while we retrieve the portfolio data' />}>
+        <ErrorBoundary fallback={<ErrorState title='Error Retrieving Data' description='There was an error while retrieving the data.' />}>
+           <HomeView />
+        </ErrorBoundary>
+      </Suspense>
+    </HydrationBoundary>
   )
 }
 
-export default Home
+export default HomePage

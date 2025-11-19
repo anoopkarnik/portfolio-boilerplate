@@ -5,8 +5,14 @@ const nextConfig = {
     remotePatterns: [
         {hostname: 'strapi.bayesian-labs.com', protocol:'https'},
         {hostname: 'localhost', protocol:'http'},
-    ]
-} // Disable Strict Mode
+    ],
+    unoptimized: true,
+  },
+  webpack(config) {
+      const path = require('path');
+      config.resolve.alias['@'] = path.resolve(__dirname, 'src');
+      return config;
+  },
 };
 
 module.exports = nextConfig;

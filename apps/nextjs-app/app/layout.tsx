@@ -8,7 +8,7 @@ import "../../../packages/ui/src/styles/custom/heroBackgroundAnimation.css"
 import { Toaster } from "@repo/ui/molecules/custom/v1/Toaster";
 import { Analytics } from "@vercel/analytics/react"
 import { GoogleAnalytics } from "@next/third-parties/google";
-import {profile} from "../lib/constants/profile"
+import { TRPCReactProvider } from "@/trpc/client";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,8 +22,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: profile.name,
-  description: profile.details
+  title: "Portfolio",
+  description: "Personal portfolio website"
 };
 
 export default function RootLayout({
@@ -41,12 +41,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+          <TRPCReactProvider>
             <ThemeProvider defaultTheme="dark" >
               {children}
               <Analytics/>
               <Toaster />
             </ThemeProvider>
             <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_MEASUREMENT_ID as string}/>
+          </TRPCReactProvider>
       </body>
     </html>
   );
