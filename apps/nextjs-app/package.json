@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "@next/third-parties": "^15.1.5",
+    "@repo/notion": "*",
     "@repo/typescript-config": "*",
     "@repo/ui": "*",
-    "@repo/notion": "*",
     "@tanstack/react-query": "^5.90.8",
     "@tanstack/react-table": "^8.21.3",
     "@trpc/client": "^11.7.1",
@@ -20,6 +20,7 @@
     "@trpc/react-query": "^11.7.1",
     "@trpc/server": "^11.7.1",
     "@trpc/tanstack-react-query": "^11.7.1",
+    "@upstash/redis": "^1.35.6",
     "@vercel/analytics": "^1.4.1",
     "axios": "^1.7.9",
     "lucide-react": "^0.554.0",

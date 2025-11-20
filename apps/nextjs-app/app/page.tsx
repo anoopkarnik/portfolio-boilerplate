@@ -6,7 +6,8 @@ import { dehydrate, HydrationBoundary } from "@tanstack/react-query";
 import { Suspense } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
-export const revalidate = 600;
+// export const revalidate = 600;
+export const dynamic = "force-dynamic";
 const HomePage = async () => {
   const queryClient = getQueryClient();
   await Promise.all([
