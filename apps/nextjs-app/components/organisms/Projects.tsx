@@ -123,7 +123,7 @@ const Projects = ({ projects }: { projects: projectProps[] }) => {
       )}
 
       {/* Projects grid */}
-      <div className="flex flex-wrap items-center justify-between gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {pageItems.map((project, index) => (
           // If you have project.id, use that instead of index
           <ProjectCard key={index} project={project} />
