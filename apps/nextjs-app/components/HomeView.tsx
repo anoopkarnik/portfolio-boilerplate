@@ -9,6 +9,7 @@ import { cn } from '@repo/ui/lib/utils'
 import ProfileDetails from '@/components/organisms/ProfileDetails'
 import { useSuspenseQuery } from '@tanstack/react-query'
 import { useTRPC } from '@/trpc/client'
+import Support from './organisms/Support'
 
 
 const HomeView = () => {
@@ -19,13 +20,14 @@ const HomeView = () => {
 
   return (
     <>
-      <div className={cn('flex justify-center my-10 gap-10 mx-6 relative w-full',
+      <div className={cn('flex justify-center my-10 gap-10 mx-6 relative ',
         device === 'tablet' && 'flex-col items-center ',
         device === 'mobile' && 'flex-col items-center'
       )}>
         <Profile profile={notionData.profile}/>
         <ProfileDetails about={notionData.about} education={notionData.education} experience={notionData.experience} 
         skills={notionData.skills} projects={notionData.projects}/>
+        <Support />
       </div>
     </>
   )

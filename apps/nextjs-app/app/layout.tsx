@@ -5,7 +5,7 @@ import "../../../packages/ui/src/styles/shadcn/shadcn-green.css"
 import "../../../packages/ui/src/styles/custom/scroll.css"
 import { ThemeProvider } from "@repo/ui/providers/theme-provider";
 import "../../../packages/ui/src/styles/custom/heroBackgroundAnimation.css"
-import { Toaster } from "@repo/ui/molecules/custom/v1/Toaster";
+import { Toaster } from "@repo/ui/molecules/shadcn/sonner";
 import { Analytics } from "@vercel/analytics/react"
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { TRPCReactProvider } from "@/trpc/client";
