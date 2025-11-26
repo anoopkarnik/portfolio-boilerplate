@@ -1,18 +1,43 @@
 "use client"
+import { useTRPC } from '@/trpc/client'
 import { Button } from '@repo/ui/atoms/shadcn/button'
 import { Input } from '@repo/ui/atoms/shadcn/input'
 import { Textarea } from '@repo/ui/atoms/shadcn/textarea'
+import { useMutation } from '@tanstack/react-query'
 import React, { useState } from 'react'
 import { toast } from 'sonner'
 
 const Message = ({setActivePanel}:{setActivePanel: any}) => {
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
+    const [email, setEmail] = useState("");
+
+    const trpc = useTRPC();
+    const sendSupportMessage = useMutation(
+        trpc.portfolio.sendSupportMessage.mutationOptions({
+            onSuccess: async () => {toast.success("Message sent successfully!")},
+            onError: async () => {toast.error("Failed to send message. Please try again later.")},
+        })
+    )
 
 
-    const handleSendMessage = () => {
-        toast.info("Message is coming soon!")
+    const handleSendMessage = async () => {
+        if (!email.trim() || !subject.trim() || !message.trim()) {
+            toast.error("Please fill in email, subject, and message.");
+            return;
+        }
+        try {
+            await sendSupportMessage.mutateAsync({ subject, email, message });
+            setSubject("");
+            setMessage("");
+            setEmail("");
+            setActivePanel(null);
+        } catch  {
+              toast.error("Failed to send message. Please try again later.");
+        }
     };
+
+      const isLoading = sendSupportMessage.isPending;
     return (
         <div className="flex flex-col gap-3 rounded-md bg-popover">
         <div className="space-y-1">
@@ -22,11 +47,20 @@ const Message = ({setActivePanel}:{setActivePanel: any}) => {
             </p>
         </div>
         <Input
+            placeholder="Email"
+            className="w-full bg-background"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            onKeyDown={(e) => e.stopPropagation()}
+            disabled={isLoading}
+        />
+        <Input
             placeholder="Subject"
             className="w-full bg-background"
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
             onKeyDown={(e) => e.stopPropagation()}
+            disabled={isLoading}
         />
         <Textarea
             placeholder="Message (Required)"
@@ -34,17 +68,19 @@ const Message = ({setActivePanel}:{setActivePanel: any}) => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyDown={(e) => e.stopPropagation()}
+            disabled={isLoading}
         />
         <div className="flex justify-between items-center gap-2 pt-1">
             <Button
             variant="ghost"
             size="sm"
             onClick={() => setActivePanel(null)}
+            disabled={isLoading}
             >
             Back
             </Button>
-            <Button size="sm" onClick={handleSendMessage}>
-            Send Message
+            <Button size="sm" onClick={handleSendMessage} disabled={isLoading}>
+            {isLoading ? "Sending..." : "Send Message"}
             </Button>
         </div>
     </div>

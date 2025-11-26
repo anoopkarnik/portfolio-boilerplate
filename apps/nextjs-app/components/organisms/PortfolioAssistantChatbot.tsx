@@ -7,6 +7,8 @@ import { ChatBubbleIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 import { Skeleton } from "@repo/ui/molecules/shadcn/skeleton";
 import { FaRobot } from "react-icons/fa";
+import { useTRPC } from "@/trpc/client";
+import { useMutation } from "@tanstack/react-query";
 
 type Message = {
   role: "user" | "assistant";
@@ -19,6 +21,10 @@ const PortfolioAssistantChatbot = () => {
   const [waitingForReply, setWaitingForReply] = useState(false);
   const [firstMessage, setFirstMessage] = useState(true);
 
+  const trpc = useTRPC();
+  const updateChat = useMutation(
+    trpc.portfolio.chatWithPortfolioAssistant.mutationOptions({ })
+  )
   const formatMessage = (message: string): string => {
     return message
       .replace(/\*\*(.+?)\*\*/g, "<b>$1</b>") // **bold**
@@ -37,17 +43,8 @@ const PortfolioAssistantChatbot = () => {
     setMessages((prev) => [...prev, { role: "user", value: input }]);
 
     try {
-      const res = await fetch("/api/portfolio-assistant", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: input }),
-      });
 
-      if (!res.ok) {
-        throw new Error("Failed to reach assistant");
-      }
-
-      const data = await res.json();
+      const data = await updateChat.mutateAsync({ message: input });
       const reply = data.reply ?? "Sorry, I didn't get a response.";
 
       setMessages((prev) => [

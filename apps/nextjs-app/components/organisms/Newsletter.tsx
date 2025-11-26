@@ -1,6 +1,8 @@
 "use client"
+import { useTRPC } from '@/trpc/client'
 import { Button } from '@repo/ui/atoms/shadcn/button'
 import { Input } from '@repo/ui/atoms/shadcn/input'
+import { useMutation } from '@tanstack/react-query'
 import React, { useState } from 'react'
 import { toast } from 'sonner'
 
@@ -8,12 +10,26 @@ const Newsletter = ({setActivePanel}:{setActivePanel: any}) => {
 
     const [newsletterEmail, setNewsletterEmail] = useState("");
 
+    const trpc = useTRPC();
+    const subscribeNewsletter = useMutation(
+         trpc.portfolio.subscribeToNewsletter.mutationOptions({
+            onSuccess: async () => {toast.success("Subscribed to newsletter successfully!")},
+            onError: async () => {toast.error("Failed to subscribe to newsletter. Please try again later.")},
+         })
+    )
 
 
     const handleJoinNewsletter = () => {
-        toast.success("Newsletter subscription", {
-          description: "It is coming soon! Stay tuned.",
-        })
+        if (!newsletterEmail.trim()) {
+            toast.error("Please enter a valid email address.");
+            return;
+        }
+        try {
+            subscribeNewsletter.mutate({ email: newsletterEmail });
+        } catch {
+              toast.error("Failed to subscribe to newsletter. Please try again later.");
+        }
+        subscribeNewsletter.mutate({ email: newsletterEmail });
   };
   return (
         <div className="flex flex-col gap-3 rounded-md bg-popover ">
